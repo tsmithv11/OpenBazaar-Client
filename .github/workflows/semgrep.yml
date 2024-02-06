@@ -9,7 +9,7 @@ on:
     - .github/workflows/semgrep.yml
   schedule:
   # random HH:MM to avoid a load spike on GitHub Actions at 00:00
-  - cron: 27 9 * * *
+  - cron: 2 2 * * *
 name: Semgrep
 jobs:
   semgrep:
@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-      SEMGREP_APP_URL: https://assistant-dry-run.dev.semgrep.dev
     container:
       image: returntocorp/semgrep
     steps:
